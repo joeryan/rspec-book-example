@@ -31,7 +31,31 @@ module Codebreaker
         it "sends a mark with" do
           game.start("rbyc")
           output.should_receive(:puts).with('w')
-          game.guess("brrr")
+          game.guess("bggg")
+        end
+      end
+
+      context "with one exact match" do
+        it "sends a mark with" do
+          game.start("rbyc")
+          output.should_receive(:puts).with("b")
+          game.guess("rggg")
+        end
+      end
+
+      context "with two color matches" do
+        it "sends a mark with" do
+          game.start("rbyc")
+          output.should_receive(:puts).with("ww")
+          game.guess("grbg")
+        end
+      end
+
+      context "with two exact matches" do
+        it "sends a mark with" do
+          game.start("rbyc")
+          output.should_receive(:puts).with("bb")
+          game.guess("rbgg")
         end
       end
     end
