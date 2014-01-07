@@ -16,9 +16,9 @@ end
 Given /^I am not yet playing$/ do
 end
 
-Given(/^the secret code is r g y c$/) do
+Given(/^the secret code is "([^"]*)"$/) do |code|
   game = Codebreaker::Game.new(output)
-  game.start("r g y c")
+  game.start(code)
 end
 
 When /^I start a new game$/ do
@@ -26,7 +26,7 @@ When /^I start a new game$/ do
   game.start
 end
 
-Then /^I should see "([^\"]*)"$/ do |message|
+Then /^I should see "([^"]*)"$/ do |message|
   output.messages.should include(message)
 end
 

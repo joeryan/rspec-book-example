@@ -15,19 +15,19 @@ Scenario Outline: submit guess
   Then the mark should be <mark>
 
   Examples:
-    | code      | guess   | mark |
-    | r g y c   | r g y c | bbbb |
-    | r g y c   | r g c y | bbww |
-    | r g y c   | r c g y | bwww |
-    | r g y c   | g r c y | wwww |
-    | r g y c   | r g y b | bbb  |
-    | r g y c   | r g b y | bbw  |
-    | r g y c   | r b g y | bww  |
-    | r g y c   | b r g y | www  |
-    | r g y c   | r g b b | bb   |
-    | r g y c   | r b g b | bw   |
-    | r g y c   | b b r g | ww   |
-    | r g y c   | r b b b | b    |
-    | r g y c   | b r b b | w    |
-    | r g y c   | b b b b |      |
+    | code | guess| mark |
+    | "rgyc" | "rgyc" | "bbbb" |
+    | "rgyc" | "rgcy" | "bbww" |
+    | "rgyc" | "rcgy" | "bwww" |
+    | "rgyc" | "grcy" | "wwww" |
+    | "rgyc" | "rgyb" | "bbb"  |
+    | "rgyc" | "rgby" | "bbw"  |
+    | "rgyc" | "rbgy" | "bww"  |
+    | "rgyc" | "brgy" | "www"  |
+    | "rgyc" | "rgbb" | "bb"   |
+    | "rgyc" | "rbgb" | "bw"   |
+    | "rgyc" | "bbrg" | "ww"   |
+    | "rgyc" | "rbbb" | "b"    |
+    | "rgyc" | "brbb" | "w"    |
+    | "rgyc" | "bbbb" |  ""    |
 
