@@ -48,6 +48,35 @@ module Codebreaker
           game.start("rbyc")
           output.should_receive(:puts).with("ww")
           game.guess("grbg")
+<<<<<<< .merge_file_r0MdgP
+<<<<<<< .merge_file_wKW6WG
+<<<<<<< .merge_file_n80TTT
+<<<<<<< .merge_file_Bu22TK
+=======
+=======
+>>>>>>> .merge_file_vLmXmQ
+=======
+>>>>>>> .merge_file_Q5pvXH
+=======
+>>>>>>> .merge_file_5zejjM
+        end
+      end
+
+      context "with one color and one exact match (in that order)" do
+        it "sends a mark with" do
+          game.start("rbyc")
+          output.should_receive(:puts).with("bw")
+          game.guess("gryc")
+<<<<<<< .merge_file_r0MdgP
+<<<<<<< .merge_file_wKW6WG
+<<<<<<< .merge_file_n80TTT
+>>>>>>> .merge_file_9WvQIL
+=======
+>>>>>>> .merge_file_vLmXmQ
+=======
+>>>>>>> .merge_file_Q5pvXH
+=======
+>>>>>>> .merge_file_5zejjM
         end
       end
 
