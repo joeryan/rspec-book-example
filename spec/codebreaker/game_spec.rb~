@@ -47,7 +47,7 @@ module Codebreaker
         it "sends a mark with" do
           game.start("rbyc")
           output.should_receive(:puts).with("ww")
-          game.guess("rygg")
+          game.guess("grbg")
         end
       end
 
