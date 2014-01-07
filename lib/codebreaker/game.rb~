@@ -13,11 +13,11 @@ module Codebreaker
     def guess(guess)
       #TODO calculate mark and display
       mark = ''      
-      for i in 1..4
+      for i in 0..3
         if exact_match?(guess, i)
-          mark += 'b'
+          mark << 'b'
         elsif color_match?(guess, i)
-          mark += 'w'
+          mark << 'w'
         end
       end
       @output.puts mark
