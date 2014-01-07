@@ -62,7 +62,7 @@ module Codebreaker
       context "with one color match and one exact match (in that order)" do
         it "sends a mark with" do
           game.start("rbyc")
-          output.should_receive(:puts).with("wb")
+          output.should_receive(:puts).with("bw")
           game.guess("ybgg")
         end
       end

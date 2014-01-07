@@ -19,7 +19,7 @@ module Codebreaker
           mark << 'w'
         end
       end
-      @output.puts mark
+      @output.puts mark.chars.sort.join
     end
 
     def exact_match?(guess, index)
