@@ -11,7 +11,7 @@ module Codebreaker
 
     def guess(guess)
       #TODO calculate mark and display
-      output.puts 'TODO calculate mark'
+      @output.puts ''
     end
   end
 end
