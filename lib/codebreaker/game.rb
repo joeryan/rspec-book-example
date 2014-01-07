@@ -12,10 +12,10 @@ module Codebreaker
 
     def guess(guess)
       mark = ''      
-      for i in 0..3
-        if exact_match?(guess, i)
+      (0..3).each do |index|
+        if exact_match?(guess, index)
           mark << 'b'
-        elsif color_match?(guess, i)
+        elsif color_match?(guess, index)
           mark << 'w'
         end
       end
