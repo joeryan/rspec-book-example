@@ -11,19 +11,6 @@ module Codebreaker
     end
 
     def guess(guess)
-<<<<<<< .merge_file_PcjDDC
-<<<<<<< .merge_file_6uD0Nw
-<<<<<<< .merge_file_dy6aCA
-      mark = ''      
-      for i in 0..3
-        if exact_match?(guess, i)
-          mark << 'b'
-        elsif color_match?(guess, i)
-          mark << 'w'
-        end
-      end
-      @output.puts mark.chars.sort.join
-=======
       @output.puts 'b'*exact_match_count(guess) + 'w'*color_match_count(guess)
     end
 
@@ -34,60 +21,9 @@ module Codebreaker
     end
 
     def color_match_count(guess)
-      color_match_count = 0
-      (0..3).each do |index|
-        if color_match?(guess, index) && !exact_match?(guess, index)
-          color_match_count += 1
-        end
-      end
-      color_match_count
->>>>>>> .merge_file_bGMhRB
-=======
-      @output.puts 'b'*exact_match_count(guess) + 'w'*color_match_count(guess)
-    end
-
-    def exact_match_count(guess)
       (0..3).inject(0) do |count, index|
-        count += (exact_match?(guess, index) ? 1 : 0)
+        count += (color_match?(guess, index) && !exact_match?(guess, index) ? 1 : 0)
       end
-    end
-
-    def color_match_count(guess)
-      color_match_count = 0
-      (0..3).each do |index|
-        if color_match?(guess, index) && !exact_match?(guess, index)
-          color_match_count += 1
-        end
-      end
-      color_match_count
->>>>>>> .merge_file_GQSzBx
-=======
-      @output.puts 'b'*exact_match_count(guess) + 'w'*color_match_count(guess)
-    end
-
-    def exact_match_count(guess)
-      (0..3).inject(0) do |count, index|
-        count += (exact_match?(guess, index) ? 1 : 0)
-      end
-    end
-
-    def color_match_count(guess)
-      color_match_count = 0
-      (0..3).each do |index|
-        if color_match?(guess, index) && !exact_match?(guess, index)
-          color_match_count += 1
-        end
-      end
-      color_match_count
->>>>>>> .merge_file_vxkBaC
-    end
-
-    def exact_match?(guess, index)
-      guess[index] == @secret[index]
-    end
-
-    def color_match?(guess, index)
-      @secret.include?(guess[index])
     end
   end
 end
