@@ -21,9 +21,17 @@ module Codebreaker
     describe "#guess" do
       context "with no matches" do
         it "sends a mark with" do
-          game.start("rrrr")
-          output.should_receive(:puts).with("")
-          game.guess("cccc")
+          game.start("rbyc")
+          output.should_receive(:puts).with('')
+          game.guess("gggg")
+        end
+      end
+      
+      context "with one color match" do
+        it "sends a mark with" do
+          game.start("rbyc")
+          output.should_receive(:puts).with('w')
+          game.guess("brrr")
         end
       end
     end

@@ -9,21 +9,29 @@ module Codebreaker
        
       it "sends a welcome message" do
         output.should_receive(:puts).with('Welcome to Codebreaker!')
-        game.start
+        game.start("rbyc")
       end
       
       it "prompts for the first guess" do
         output.should_receive(:puts).with('Enter guess:')
-        game.start
+        game.start("rbyc")
       end
     end
   
     describe "#guess" do
       context "with no matches" do
         it "sends a mark with" do
-          game.start("rrrr")
+          game.start("rbyc")
           output.should_receive(:puts).with('')
-          game.guess("cccc")
+          game.guess("gggg")
+        end
+      end
+      
+      context "with one color match" do
+        it "sends a mark with" do
+          game.start("rbyc")
+          output.should_receive(:puts).with('w')
+          game.guess("brrr")
         end
       end
     end

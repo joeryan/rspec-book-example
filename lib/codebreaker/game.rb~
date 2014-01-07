@@ -4,14 +4,18 @@ module Codebreaker
       @output = output
     end
 
-    def start(secret = nil)
+    def start(secret)
       @output.puts 'Welcome to Codebreaker!'
       @output.puts 'Enter guess:'
     end
 
     def guess(guess)
       #TODO calculate mark and display
-      output.puts ''
+      if @secret.include?(guess[0])
+        @output.puts 'w'
+      else
+        @output.puts ''
+      end
     end
   end
 end
