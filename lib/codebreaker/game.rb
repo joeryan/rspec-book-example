@@ -11,27 +11,9 @@ module Codebreaker
     end
 
     def guess(guess)
-      @output.puts 'b'*exact_match_count(guess) + 'w'*color_match_count(guess)
-    end
-
-    def exact_match_count(guess)
-      (0..3).inject(0) do |count, index|
-        count += (exact_match?(guess, index) ? 1 : 0)
-      end
-    end
-
-    def color_match_count(guess)
-      (0..3).inject(0) do |count, index|
-        count += (color_match?(guess, index) && !exact_match?(guess, index) ? 1 : 0)
-      end
-    end
-
-    def exact_match?(guess, index)
-      guess[index] == @secret[index]
-    end
-
-    def color_match?(guess, index)
-      @secret.include?(guess[index])
+      marker = Marker.new(@secret, guess)
+      @output.puts 'b'*marker.exact_match_count + 
+                      'w'*marker.color_match_count
     end
   end
 end
