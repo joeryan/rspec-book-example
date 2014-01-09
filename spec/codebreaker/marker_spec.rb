@@ -5,59 +5,59 @@ module Codebreaker
     describe "#exact_match_count" do
       context "with no matches" do
         it "returns 0" do
-          marker = Marker.new('1234','5555')
+          marker = Marker.new('rbyc','gggg')
           marker.exact_match_count.should ==0
         end
       end
 
       context "with 1 exact match" do
         it "returns 1" do
-          marker = Marker.new('1234','1555')
+          marker = Marker.new('rbyc','rggg')
           marker.exact_match_count.should ==1
         end
       end
 
-      context "with 1 number match" do
+      context "with 1 color match" do
         it "returns 0" do
-          marker = Marker.new('1234','2555')
+          marker = Marker.new('rbyc','bggg')
           marker.exact_match_count.should ==0
         end
       end
 
       context "with 1 exact match and 1 number match" do
         it "returns 1" do
-          marker = Marker.new('1234','1525')
+          marker = Marker.new('rbyc','rgbg')
           marker.exact_match_count.should ==1
         end
       end
     end
 
-    describe "#number_match_count" do
+    describe "#color_match_count" do
       context "with no matches" do
         it "returns 0" do
-          marker = Marker.new('1234','5555')
-          marker.number_match_count.should ==0
+          marker = Marker.new('rbyc','gggg')
+          marker.color_match_count.should ==0
         end
       end
       
-      context "with 1 number match" do
+      context "with 1 color match" do
         it "returns 1" do
-          marker = Marker.new('1234','2555')
-          marker.number_match_count.should ==1
+          marker = Marker.new('rbyc','bggg')
+          marker.color_match_count.should ==1
         end
       end
 
       context "with 1 exact match" do
         it "returns 0" do
-          marker = Marker.new('1234','1555')
-          marker.number_match_count.should ==0
+          marker = Marker.new('rbyc','rggg')
+          marker.color_match_count.should ==0
         end
       end
   
-      context "with 1 exact match and 1 number match" do
+      context "with 1 exact match and 1 color match" do
         it "returns 1" do
-          marker = Marker.new('1234','1525')
-          marker.number_match_count.should ==1
+          marker = Marker.new('rbyc','rygg')
+          marker.color_match_count.should ==1
         end
       end
     end
