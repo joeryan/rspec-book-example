@@ -37,3 +37,29 @@ end
 Then /^the mark should be "([^"]*)"$/ do |mark|
   output.messages.should include(mark)
 end
+
+Given(/^I am playing a game with the secret 'rgyc'$/) do
+  @game = Codebreaker::Game.new(output)
+  @game.start('rgyc')
+end
+
+When(/^I quit the game$/) do
+  @game.on_exit
+end
+
+Then(/^the game should end and I should see "([^"]*)"$/) do |message|
+  output.messages.should include(message)
+end
+
+Given(/^I am playing a game$/) do
+  @game = Codebreaker::Game.new(output)
+  @game.start('rgyc')
+end
+
+When(/^I guess the code correctly$/) do
+  @game.guess('rgyc')
+end
+
+Then(/^the game exits and I should see "([^"]*)"$/) do |message|
+  output.messages.should include(message)
+end
