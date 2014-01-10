@@ -74,6 +74,14 @@ module Codebreaker
           marker.color_match_count.should == 1
         end
       end
+
+      context "with 1 exact match and duplicated color in guess" do
+        it "returns 1" do
+          pending("refactor match_count")
+          marker = Marker.new('rbyc', 'rrgg')
+          marker.color_match_count.should == 0
+        end
+      end
     end
   end
 end
