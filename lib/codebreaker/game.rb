@@ -1,3 +1,4 @@
+require 'codebreaker/marker'
 module Codebreaker
   class Game
     def initialize(output)
