@@ -5,5 +5,8 @@ require 'codebreaker/game'
 game = Codebreaker::Game.new(STDOUT)
 game.start('rbyc')
 while guess = gets.chomp
+  game.quit if guess.downcase == 'q'
   game.guess(guess)
 end
+
+exit

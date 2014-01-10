@@ -13,7 +13,7 @@ module Codebreaker
       end
       
       it "prompts for the first guess" do
-        output.should_receive(:puts).with('Enter guess:')
+        output.should_receive(:puts).with('Enter guess (q to quit):')
         game.start("rbyc")
       end
     end
@@ -30,7 +30,7 @@ module Codebreaker
       it "sends a message and the secret to output" do
           game.start('rbyc')
           output.should_receive(:puts).with("The secret code was: rbyc")
-          exit
+          game.quit
       end
     end
   end
