@@ -25,5 +25,13 @@ module Codebreaker
           game.guess("rbyc")
       end
     end
+
+    describe "#quit" do
+      it "sends a message and the secret to output" do
+          game.start('rbyc')
+          output.should_receive(:puts).with("The secret code was: rbyc")
+          exit
+      end
+    end
   end
 end

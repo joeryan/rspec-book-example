@@ -44,7 +44,7 @@ Given(/^I am playing a game with the secret 'rgyc'$/) do
 end
 
 When(/^I quit the game$/) do
-  @game.on_exit
+  @game.at_exit
 end
 
 Then(/^the game should end and I should see "([^"]*)"$/) do |message|
