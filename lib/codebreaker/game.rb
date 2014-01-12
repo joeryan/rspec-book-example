@@ -13,12 +13,19 @@ module Codebreaker
 
     def guess(guess)
       marker = Marker.new(@secret, guess)
+      self.correct if marker.exact_match_count == 4
       @output.puts 'b'*marker.exact_match_count + 
                       'w'*marker.color_match_count
     end
 
     def quit
       @output.puts "The secret code was: " + @secret
+      exit
+    end
+
+    def correct
+      puts "Congratulations, you guessed correctly!"
+      exit
     end
   end
 end

@@ -18,11 +18,19 @@ module Codebreaker
       end
     end
   
-    describe "#guess" do
+    describe "#incorect_guess" do
       it "sends a mark to output" do
-          game.start("rbyc")
-          output.should_receive(:puts).with('bbbb')
-          game.guess("rbyc")
+        game.start("rbyc")
+        output.should_receive(:puts).with('wwww')
+        game.guess("cybr")
+      end
+    end
+
+    describe "#correct_guess" do
+      it "ends game and sends congratulations to output" do
+        game.start("rbyc")
+        output.should_receive(:puts).with("Congratulations, you guessed correctly!")
+        game.guess("rbyc")
       end
     end
 
