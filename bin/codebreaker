@@ -1,9 +1,17 @@
-#!/usr/bin/env ruby
+#!/usr/bi/env ruby
 $LOAD_PATH.push File.join(File.dirname(__FILE__), "..", "lib")
 require 'codebreaker/game'
 
+# generate the random secret
+srand
+colors = ['r', 'b', 'y', 'g', 'c']
+secret = ""
+4.times do
+  secret += colors[rand(4)]
+end
+ 
 game = Codebreaker::Game.new(STDOUT)
-game.start('rbyc')
+game.start(secret)
 while guess = gets.chomp
   game.quit if guess.downcase == 'q'
   game.guess(guess)
